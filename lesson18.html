@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lecture 18: Restoring a Database with Preloaded Data</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Lecture 18: Restoring a Database with Preloaded Data</h1>
+
+<p class="subtitle">
+REST API Development: Build, Test, Troubleshoot
+</p>
+
+<p>
+In REST API development, working with a properly structured database is essential.
+During development and testing, it is often useful to restore a database that already
+contains sample or preloaded data. This allows developers to test API endpoints
+without having to manually insert records every time.
+</p>
+
+<h2 class="section-title">Why Use a Database Backup?</h2>
+
+<p>
+A database backup file allows developers to quickly recreate a working environment
+with tables, relationships, and test data already configured.
+</p>
+
+<p>Benefits include:</p>
+
+<ul>
+<li>Faster development and testing</li>
+<li>Consistent data for API demonstrations</li>
+<li>Ability to reproduce issues during debugging</li>
+<li>Simplified setup for new developers</li>
+</ul>
+
+<h2 class="section-title">Common Database Backup Format</h2>
+
+<p>
+In SQL Server environments, databases are often distributed as backup files
+with the extension <strong>.bak</strong>.
+</p>
+
+<div class="code-box">
+Example file: RestApiSampleDatabase.bak
+</div>
+
+<p>
+This file contains the database structure, tables, relationships, and
+preloaded records needed for the API to function properly.
+</p>
+
+<h2 class="section-title">Restoring the Database in SQL Server</h2>
+
+<p>
+To restore a database using SQL Server Management Studio (SSMS),
+developers can follow these steps:
+</p>
+
+<ul>
+<li>Open SQL Server Management Studio</li>
+<li>Right-click on the "Databases" folder</li>
+<li>Select "Restore Database"</li>
+<li>Choose the backup file (.bak)</li>
+<li>Confirm the restore operation</li>
+</ul>
+
+<p>
+Once restored, the database becomes available for the API to connect to.
+</p>
+
+<h2 class="section-title">Connecting the REST API to the Database</h2>
+
+<p>
+After restoring the database, the API must be configured to use the correct
+connection string.
+</p>
+
+<div class="code-box">
+"ConnectionStrings": {
+ "DefaultConnection":
+ "Server=localhost;Database=RestApiDB;Trusted_Connection=True;"
+}
+</div>
+
+<p>
+This configuration allows the API to interact with the restored database
+and access the preloaded data.
+</p>
+
+<h2 class="section-title">Testing API Endpoints with Sample Data</h2>
+
+<p>
+Once the database is restored and the API is connected, developers can
+test endpoints such as:
+</p>
+
+<ul>
+<li>GET – Retrieve existing records</li>
+<li>POST – Insert new records</li>
+<li>PUT – Update records</li>
+<li>DELETE – Remove records</li>
+</ul>
+
+<p>
+Having preloaded data ensures that GET requests return meaningful results
+during testing.
+</p>
+
+<h2 class="section-title">Best Practices</h2>
+
+<ul>
+<li>Keep a clean backup version for development</li>
+<li>Document the database schema</li>
+<li>Avoid using production data in development environments</li>
+<li>Update backup files when the schema changes</li>
+</ul>
+
+<p>
+Following these practices helps maintain stable and predictable API
+development environments.
+</p>
+
+<h2 class="section-title">Conclusion</h2>
+
+<p>
+Restoring a database with preloaded data significantly speeds up
+REST API development and testing. It ensures that developers can
+immediately interact with meaningful data while building and
+debugging their endpoints.
+</p>
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+View Course (English)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Vedi Corso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Back to Course Page
+</a>
+
+</div>
+
+<div class="footer">
+Lecture 18 – REST API Development Course.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
