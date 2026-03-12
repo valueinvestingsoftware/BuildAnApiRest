@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lecture 15: POST Method</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Lecture 15: POST Method</h1>
+
+<p class="subtitle">
+REST API Development: Build, Test, Troubleshoot
+</p>
+
+<p>
+The <strong>POST</strong> method is used in REST APIs to create new resources on the server.
+Unlike the GET method, which retrieves data, POST sends data from the client
+to the server so that a new record can be created.
+</p>
+
+<p>
+POST requests typically include data in the request body, usually formatted as JSON.
+The server processes the data, performs validation, and stores the new resource
+in the database.
+</p>
+
+<h2 class="section-title">Purpose of the POST Method</h2>
+
+<p>
+The POST method allows clients to send new data to the server. This is commonly
+used when creating new records in a system.
+</p>
+
+<p>Typical examples include:</p>
+
+<ul>
+<li>Creating a new product</li>
+<li>Registering a new user</li>
+<li>Adding a new order</li>
+<li>Submitting a form</li>
+</ul>
+
+<h2 class="section-title">Example POST Request</h2>
+
+<p>
+A POST request usually sends JSON data in the body of the request.
+</p>
+
+<div class="code-box">
+POST /api/products
+</div>
+
+<p>Request body:</p>
+
+<div class="code-box">
+{
+ "name": "Wireless Mouse",
+ "price": 25,
+ "stock": 50
+}
+</div>
+
+<p>
+This request asks the server to create a new product using the provided data.
+</p>
+
+<h2 class="section-title">Server Processing</h2>
+
+<p>
+When the server receives the POST request, it typically performs several steps:
+</p>
+
+<ul>
+<li>Validate the input data</li>
+<li>Create a new object based on the model</li>
+<li>Store the record in the database</li>
+<li>Return a response to the client</li>
+</ul>
+
+<h2 class="section-title">Example Response</h2>
+
+<p>
+If the operation is successful, the server may return a response like this:
+</p>
+
+<div class="code-box">
+{
+ "id": 10,
+ "name": "Wireless Mouse",
+ "price": 25,
+ "stock": 50
+}
+</div>
+
+<p>
+The response often includes the newly created resource along with its generated identifier.
+</p>
+
+<h2 class="section-title">HTTP Status Codes for POST</h2>
+
+<ul>
+<li><strong>201 Created</strong> – Resource successfully created</li>
+<li><strong>400 Bad Request</strong> – Invalid request data</li>
+<li><strong>500 Internal Server Error</strong> – Server processing error</li>
+</ul>
+
+<p>
+Returning proper status codes helps clients understand the outcome of the request.
+</p>
+
+<h2 class="section-title">Testing POST Requests</h2>
+
+<p>
+POST requests can be tested using tools such as Postman. Developers can send
+JSON data in the request body and observe the API response.
+</p>
+
+<p>Example endpoint tested in Postman:</p>
+
+<div class="code-box">
+https://localhost:5001/api/products
+</div>
+
+<h2 class="section-title">Best Practices</h2>
+
+<ul>
+<li>Validate input data before saving</li>
+<li>Return appropriate HTTP status codes</li>
+<li>Use clear JSON structures</li>
+<li>Ensure database operations are secure</li>
+</ul>
+
+<p>
+Following these practices ensures that POST endpoints remain reliable
+and secure within REST API systems.
+</p>
+
+<h2 class="section-title">Next Steps</h2>
+
+<p>
+After implementing the POST method, the next step is to implement additional
+methods such as PUT and DELETE, allowing full CRUD functionality within
+the REST API.
+</p>
+
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+View Course (English)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Vedi Corso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Back to Course Page
+</a>
+
+</div>
+
+<div class="footer">
+Lecture 15 – REST API Development Course.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
