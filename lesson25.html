@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lecture 25: Automated REST API Testing with Postman</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Lecture 25: Automated REST API Testing with Postman</h1>
+
+<p class="subtitle">
+REST API Development: Build, Test, Troubleshoot
+</p>
+
+<p>
+Automated testing is essential for ensuring the reliability and consistency of your REST API.
+This lecture focuses on using <strong>Postman</strong> to create automated tests for GET, POST, PUT, PATCH, and DELETE endpoints.
+</p>
+
+<h2 class="section-title">Why Automated Testing Matters</h2>
+
+<ul>
+<li>Detect bugs early and prevent regressions</li>
+<li>Ensure API endpoints behave as expected across changes</li>
+<li>Save time compared to manual testing</li>
+<li>Provide confidence to developers and clients</li>
+</ul>
+
+<h2 class="section-title">Setting Up Automated Tests in Postman</h2>
+
+<p>
+Postman allows you to write test scripts using JavaScript for each request. Here’s a simple example for a GET request:
+</p>
+
+<div class="code-box">
+// Test to ensure the response status is 200 OK
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+// Test to check response contains expected fields
+pm.test("Response has name and price", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.property("name");
+    pm.expect(jsonData).to.have.property("price");
+});
+</div>
+
+<h2 class="section-title">Automating a Collection</h2>
+
+<p>
+You can organize your API requests into a <strong>Postman Collection</strong> and run them together automatically.
+Use the <strong>Collection Runner</strong> to execute multiple requests and validate responses consistently.
+</p>
+
+<div class="code-box">
+// Example: Running collection with Newman (CLI)
+newman run my-api-collection.json -e dev-environment.json
+</div>
+
+<p>
+This allows integration into CI/CD pipelines to test your API on each deployment.
+</p>
+
+<h2 class="section-title">Best Practices</h2>
+
+<ul>
+<li>Write clear and descriptive test cases</li>
+<li>Validate both positive and negative scenarios</li>
+<li>Re-use test scripts for similar endpoints</li>
+<li>Integrate with CI/CD for continuous testing</li>
+<li>Keep your test data isolated to avoid side effects</li>
+</ul>
+
+<h2 class="section-title">Conclusion</h2>
+
+<p>
+Using Postman for automated testing ensures your REST API remains stable, reliable, and trustworthy,
+while reducing manual effort and errors.
+</p>
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+View Course (English)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Vedi Corso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Back to Course Page
+</a>
+
+</div>
+
+<div class="footer">
+Lecture 25 – REST API Development Course.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
