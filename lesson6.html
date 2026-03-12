@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lecture 6: Understanding REST APIs</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Lecture 6: Understanding REST APIs</h1>
+
+<p class="subtitle">
+REST API Development: Build, Test, Troubleshoot
+</p>
+
+<p>
+REST APIs are one of the most widely used technologies for communication
+between modern software systems. They allow applications to exchange data
+in a standardized way using the HTTP protocol.
+</p>
+
+<p>
+Understanding how REST APIs work is essential for developers who build
+web applications, mobile applications, cloud services, or system integrations.
+</p>
+
+<h2 class="section-title">What Is a REST API?</h2>
+
+<p>
+A REST API (Representational State Transfer Application Programming Interface)
+is an interface that allows software applications to communicate with each
+other using HTTP requests.
+</p>
+
+<p>
+Instead of interacting directly with a database, external systems send requests
+to an API endpoint. The API processes the request, retrieves or modifies data,
+and returns a response.
+</p>
+
+<div class="code-box">
+GET https://api.company.com/products
+</div>
+
+<p>
+The server may return a JSON response like this:
+</p>
+
+<div class="code-box">
+[
+ { "id": 1, "name": "Laptop", "price": 950 },
+ { "id": 2, "name": "Keyboard", "price": 45 }
+]
+</div>
+
+<h2 class="section-title">Core Components of a REST API</h2>
+
+<ul>
+<li><strong>Client:</strong> The application that sends the request (browser, mobile app, system).</li>
+<li><strong>Server:</strong> The system that processes the request and returns a response.</li>
+<li><strong>Endpoint:</strong> The URL where the API can be accessed.</li>
+<li><strong>HTTP Methods:</strong> Actions performed on resources such as GET, POST, PUT, and DELETE.</li>
+<li><strong>Data Format:</strong> Most APIs return data in JSON format.</li>
+</ul>
+
+<h2 class="section-title">Resources and Endpoints</h2>
+
+<p>
+In REST architecture, everything is treated as a <strong>resource</strong>.
+A resource could represent a customer, product, order, or any data entity.
+</p>
+
+<p>
+Resources are accessed through endpoints such as:
+</p>
+
+<div class="code-box">
+https://api.company.com/customers
+</div>
+
+<p>
+Each endpoint represents a collection or a specific resource within the system.
+</p>
+
+<h2 class="section-title">Common HTTP Methods Used in REST APIs</h2>
+
+<ul>
+<li><strong>GET</strong> – Retrieve information from the server</li>
+<li><strong>POST</strong> – Create new records</li>
+<li><strong>PUT</strong> – Update existing records</li>
+<li><strong>DELETE</strong> – Remove records</li>
+</ul>
+
+<p>
+These methods allow clients to perform operations on resources
+while keeping the API structure clean and consistent.
+</p>
+
+<h2 class="section-title">Why REST APIs Are So Popular</h2>
+
+<ul>
+<li>They are simple and easy to implement</li>
+<li>They work with nearly any programming language</li>
+<li>They are scalable and efficient</li>
+<li>They enable integration between different systems</li>
+<li>They are the foundation of modern web services</li>
+</ul>
+
+<p>
+Because of these advantages, REST APIs are used in cloud services,
+mobile applications, e-commerce platforms, financial systems,
+and countless other modern technologies.
+</p>
+
+<h2 class="section-title">What You Will Do Next</h2>
+
+<p>
+In the following lectures, you will begin exploring how to configure
+a REST API environment, create API projects, define models, and start
+implementing real API endpoints that interact with a database.
+</p>
+
+<p>
+This hands-on approach will help you move from understanding the theory
+of REST APIs to building fully functional APIs yourself.
+</p>
+
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+View Course (English)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Vedi Corso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Back to Course Page
+</a>
+
+</div>
+
+<div class="footer">
+Lecture 6 – REST API Development Course.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
