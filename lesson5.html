@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lecture 5: The History and Importance of HTTP</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Lecture 5: The History and Importance of HTTP</h1>
+
+<p class="subtitle">
+REST API Development: Build, Test, Troubleshoot
+</p>
+
+<p>
+To understand how REST APIs function, it is essential to understand the protocol
+that makes them possible: <strong>HTTP (Hypertext Transfer Protocol)</strong>.
+HTTP is the foundation of communication on the web and is used by browsers,
+servers, and APIs to exchange information.
+</p>
+
+<h2 class="section-title">Origins of HTTP</h2>
+
+<p>
+HTTP was created in the early 1990s by <strong>Tim Berners-Lee</strong>, the inventor
+of the World Wide Web. The goal was to create a simple protocol that would allow
+clients (such as web browsers) to request documents from servers across the internet.
+</p>
+
+<p>
+The earliest version of HTTP was very simple and only supported basic document retrieval.
+However, as the web expanded, the protocol evolved to support more complex
+communication between systems.
+</p>
+
+<h2 class="section-title">Evolution of HTTP</h2>
+
+<ul>
+<li><strong>HTTP/0.9:</strong> The earliest version, supporting only basic GET requests.</li>
+<li><strong>HTTP/1.0:</strong> Introduced headers and improved communication between clients and servers.</li>
+<li><strong>HTTP/1.1:</strong> Added persistent connections, caching mechanisms, and better performance.</li>
+<li><strong>HTTP/2:</strong> Improved efficiency through multiplexing and faster data transfer.</li>
+<li><strong>HTTP/3:</strong> Introduces further performance improvements using modern transport protocols.</li>
+</ul>
+
+<p>
+Most REST APIs today operate using HTTP/1.1 or HTTP/2.
+</p>
+
+<h2 class="section-title">How HTTP Works</h2>
+
+<p>
+HTTP follows a <strong>request-response model</strong>. A client sends a request to a server,
+and the server processes the request and sends back a response.
+</p>
+
+<div class="code-box">
+GET /products HTTP/1.1
+Host: api.company.com
+</div>
+
+<p>
+The server processes the request and may return a response such as:
+</p>
+
+<div class="code-box">
+HTTP/1.1 200 OK
+Content-Type: application/json
+</div>
+
+<p>
+Along with the response body containing data.
+</p>
+
+<h2 class="section-title">HTTP and REST APIs</h2>
+
+<p>
+REST APIs rely heavily on HTTP because it provides standardized methods
+for performing operations on resources.
+</p>
+
+<ul>
+<li><strong>GET</strong> – Retrieve data</li>
+<li><strong>POST</strong> – Create new data</li>
+<li><strong>PUT</strong> – Update existing data</li>
+<li><strong>DELETE</strong> – Remove data</li>
+</ul>
+
+<p>
+These methods allow APIs to expose structured operations while maintaining
+a clear and predictable interface.
+</p>
+
+<h2 class="section-title">Why HTTP Is Critical for APIs</h2>
+
+<ul>
+<li>It is universally supported by web technologies</li>
+<li>It allows communication across different platforms</li>
+<li>It provides standardized request and response structures</li>
+<li>It enables scalable web architectures</li>
+</ul>
+
+<p>
+Without HTTP, modern web services and REST APIs would not be able to
+communicate efficiently across the internet.
+</p>
+
+<h2 class="section-title">Next Steps</h2>
+
+<p>
+Now that you understand the history and role of HTTP, the next step is to explore
+how REST APIs use HTTP principles to expose resources and services.
+Understanding this relationship is essential before building your own API.
+</p>
+
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+View Course (English)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Vedi Corso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Back to Course Page
+</a>
+
+</div>
+
+<div class="footer">
+Lecture 5 – REST API Development Course.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
