@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJ43JP9F');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lecture 11: The History and Importance of JSON</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eef2f7,#dfe7f3);
+color:#2c3e50;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+font-size:36px;
+text-align:center;
+margin-bottom:10px;
+color:#1c355e;
+}
+
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#566573;
+margin-bottom:30px;
+}
+
+.section-title{
+font-size:24px;
+margin-top:35px;
+color:#1c355e;
+border-bottom:2px solid #e6ecf5;
+padding-bottom:10px;
+}
+
+p{
+line-height:1.8;
+margin-top:15px;
+}
+
+ul{
+line-height:1.9;
+margin-top:15px;
+}
+
+.code-box{
+background:#f4f6f9;
+padding:15px;
+border-radius:8px;
+font-family:Consolas, monospace;
+margin-top:15px;
+}
+
+.buttons{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.english{background:#2c7be5;}
+.portuguese{background:#28a745;}
+.italian{background:#f59e0b;}
+.french{background:#6f42c1;}
+.curriculum{background:#20c997;}
+
+.footer{
+text-align:center;
+margin-top:40px;
+font-size:14px;
+color:#7b8a97;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Lecture 11: The History and Importance of JSON</h1>
+
+<p class="subtitle">
+REST API Development: Build, Test, Troubleshoot
+</p>
+
+<p>
+JSON (JavaScript Object Notation) is one of the most widely used data formats
+for communication between systems. In REST API development, JSON plays a
+critical role because it allows servers and clients to exchange structured
+data in a simple and efficient way.
+</p>
+
+<h2 class="section-title">What is JSON?</h2>
+
+<p>
+JSON is a lightweight data-interchange format that is easy for humans to read
+and write, and easy for machines to parse and generate.
+</p>
+
+<p>
+It represents data as key-value pairs and structured objects.
+</p>
+
+<p>Example JSON structure:</p>
+
+<div class="code-box">
+{
+  "id": 1,
+  "name": "Laptop",
+  "price": 1200
+}
+</div>
+
+<p>
+This structure allows applications to easily send and receive data
+through REST API endpoints.
+</p>
+
+<h2 class="section-title">The History of JSON</h2>
+
+<p>
+JSON was originally developed in the early 2000s as a lightweight alternative
+to XML for data exchange between web applications.
+</p>
+
+<p>
+At that time, XML was commonly used but was often considered verbose and
+complex. JSON provided a much simpler and more compact format that worked
+naturally with JavaScript-based applications.
+</p>
+
+<p>
+Over time, JSON became the preferred format for modern web services,
+especially REST APIs.
+</p>
+
+<h2 class="section-title">Why JSON Became the Standard</h2>
+
+<ul>
+<li>Simple and easy to read</li>
+<li>Lightweight and efficient</li>
+<li>Easy to parse in most programming languages</li>
+<li>Widely supported across platforms</li>
+</ul>
+
+<p>
+Because of these advantages, JSON quickly replaced XML in many
+API-based communication systems.
+</p>
+
+<h2 class="section-title">JSON in REST APIs</h2>
+
+<p>
+In REST API development, JSON is typically used as the format for
+responses returned by the server.
+</p>
+
+<p>Example API response:</p>
+
+<div class="code-box">
+GET /api/products
+</div>
+
+<p>Server response:</p>
+
+<div class="code-box">
+[
+ {
+   "id": 1,
+   "name": "Keyboard",
+   "price": 45
+ },
+ {
+   "id": 2,
+   "name": "Mouse",
+   "price": 25
+ }
+]
+</div>
+
+<p>
+Clients such as mobile apps, web applications, or other services
+can easily read this data and display or process it.
+</p>
+
+<h2 class="section-title">JSON vs XML</h2>
+
+<p>
+Although XML is still used in some systems, JSON has become the
+dominant format for modern APIs.
+</p>
+
+<ul>
+<li>JSON is more compact</li>
+<li>JSON is easier to read</li>
+<li>JSON requires less bandwidth</li>
+<li>JSON integrates naturally with JavaScript</li>
+</ul>
+
+<h2 class="section-title">Why JSON Matters for API Developers</h2>
+
+<p>
+Understanding JSON is essential for anyone building or consuming
+REST APIs. Nearly every modern API uses JSON to send and receive
+data, making it a fundamental skill for backend developers.
+</p>
+
+<h2 class="section-title">Next Steps</h2>
+
+<p>
+Now that we understand the importance of JSON, the next step
+is to implement JSON responses inside our REST API controllers
+so that clients can interact with the system efficiently.
+</p>
+
+
+<div class="buttons">
+
+<a class="btn english" href="https://www.udemy.com/course/rest-api-development-build-test-troubleshoot/" target="_blank">
+View Course (English)
+</a>
+
+<a class="btn portuguese" href="https://www.udemy.com/course/desenvolvimento-de-api-rest-construir-testar-solucionar/" target="_blank">
+Ver Curso (Português)
+</a>
+
+<a class="btn italian" href="https://www.udemy.com/course/sviluppo-api-rest-costruisci-testa-risolvi/" target="_blank">
+Vedi Corso (Italiano)
+</a>
+
+<a class="btn french" href="https://www.udemy.com/course/developpement-dapi-rest-construire-tester-depanner/" target="_blank">
+Voir le cours (Français)
+</a>
+
+</div>
+
+<div class="buttons">
+
+<a class="btn curriculum" href="Contenido.html">
+Back to Course Page
+</a>
+
+</div>
+
+<div class="footer">
+Lecture 11 – REST API Development Course.
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
