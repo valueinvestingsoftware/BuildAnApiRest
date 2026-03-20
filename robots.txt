@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://valueinvestingsoftware.github.io/BuildAnApiRest/sitemap.xml
