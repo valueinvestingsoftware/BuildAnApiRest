@@ -193,6 +193,98 @@ You can also explore the complete course curriculum and detailed lesson descript
 View Full Course Curriculum
 </a> 
   </div>
+
+  <!-- EXTRA COURSES SECTION -->
+<style>
+.extra-courses {
+   padding: 90px 20px;
+   text-align: center;
+   background: linear-gradient(135deg, #1f4037, #99f2c8);
+   color: white;
+}
+
+.extra-courses h2 {
+   font-size: 36px;
+   margin-bottom: 10px;
+}
+
+.extra-courses p {
+   font-size: 18px;
+   margin-bottom: 45px;
+   opacity: 0.9;
+}
+
+.course-buttons {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 25px;
+}
+
+.course-btn {
+   padding: 20px 34px;
+   font-size: 18px;
+   font-weight: bold;
+   color: white;
+   text-decoration: none;
+   border-radius: 16px;
+   transition: all 0.35s ease;
+   box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+   position: relative;
+   overflow: hidden;
+}
+
+/* Shine effect */
+.course-btn::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: -75%;
+   width: 50%;
+   height: 100%;
+   background: rgba(255,255,255,0.3);
+   transform: skewX(-25deg);
+   transition: 0.5s;
+}
+
+.course-btn:hover::before {
+   left: 125%;
+}
+
+.course-btn:hover {
+   transform: translateY(-6px) scale(1.1);
+   box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+}
+
+/* Vibrant gradients */
+.btn-growth { background: linear-gradient(45deg, #ff512f, #dd2476); }
+.btn-vision { background: linear-gradient(45deg, #36d1dc, #5b86e5); }
+.btn-health { background: linear-gradient(45deg, #11998e, #38ef7d); }
+.btn-spanish { background: linear-gradient(45deg, #fc466b, #3f5efb); }
+</style>
+
+<div class="extra-courses">
+   <h2>Other Highly Interesting Courses You Should Definitely Explore</h2>
+   <p>Discover more powerful programs designed to improve your health, skills, and overall quality of life.</p>
+
+   <div class="course-buttons">
+      <a class="course-btn btn-growth" href="https://valueinvestingsoftware.github.io/GrowthInHeight/" target="_blank">
+         Growth in Height Program
+      </a>
+
+      <a class="course-btn btn-vision" href="https://valueinvestingsoftware.github.io/SeeingClearly/" target="_blank">
+         Improve Your Vision Naturally
+      </a>
+
+      <a class="course-btn btn-health" href="https://valueinvestingsoftware.github.io/Psoriasis/" target="_blank">
+         Psoriasis Natural Treatment Guide
+      </a>
+
+      <a class="course-btn btn-spanish" href="https://valueinvestingsoftware.github.io/Spanish/" target="_blank">
+         Learn Spanish Step by Step
+      </a>
+   </div>
+</div>
   
 <div class="footer">
 Hands-on course designed for developers who want to master REST API development and testing.
